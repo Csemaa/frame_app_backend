@@ -1,7 +1,9 @@
 from flask import Flask
 from config import DevelopmentConfig
 from app.extensions import db, ma
-from resources.movie import movie_bp
+from app.resources.movie import movie_bp
+from app.resources.user import user_bp
+
 
 def create_app():
     # Create app obj and config
@@ -13,5 +15,6 @@ def create_app():
     ma.init_app(app)
 
     app.register_blueprint(movie_bp, url_prefix='/api/movies')
+    app.register_blueprint(user_bp, url_prefix='/api/users')
 
     return app
