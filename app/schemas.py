@@ -23,6 +23,7 @@ class UserTagSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = UserTag
         load_instance = True
+        include_fk = True
 
 usertag_schema = UserTagSchema()
 usertags_schema = UserTagSchema(many=True)

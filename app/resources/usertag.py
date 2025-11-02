@@ -53,7 +53,7 @@ def tag_movie():
     return usertag_schema.jsonify(new_usertag), 201
 
 
-@usertag_bp.route('/<id:int>', methods=['DELETE'])
+@usertag_bp.route('/<int:id>', methods=['DELETE'])
 def remove_tag(id: int):
     '''
         Deletes a tag

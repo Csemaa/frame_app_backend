@@ -6,7 +6,7 @@ class Movie(db.Model):
     id = db.Column(db.Integer, primary_key= True)
     imdb_id = db.Column(db.String(128))
     path = db.Column(db.String(512))
-    last_time_viewed = db.Column(db.DateTime(), nullable=True, default=datetime.now().isoformat())
+    last_time_viewed = db.Column(db.DateTime, nullable=True, default=datetime.now())
 
     tags = db.relationship('UserTag', back_populates='movie', cascade='all, delete-orphan')
 

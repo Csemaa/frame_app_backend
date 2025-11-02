@@ -41,7 +41,7 @@ def add_user():
 
 
 @user_bp.route('/<int:id>', methods=['PUT'])
-def update_user():
+def update_user(id: int):
     '''
         Updates a user by id
     '''
