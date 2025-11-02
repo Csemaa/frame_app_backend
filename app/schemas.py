@@ -24,7 +24,7 @@ class UserTagSchema(ma.SQLAlchemyAutoSchema):
         model = UserTag
         load_instance = True
 
-user_schema = UserTagSchema()
-users_schema = UserTagSchema(many=True)
+usertag_schema = UserTagSchema()
+usertags_schema = UserTagSchema(many=True)
 
 

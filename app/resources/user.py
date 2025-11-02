@@ -28,7 +28,7 @@ def get_user(id: int):
 @user_bp.route('/add', methods=['POST'])
 def add_user():
     '''
-        Posts a new User
+        Posts a new user
     '''
     data = request.json
     if data is None:
