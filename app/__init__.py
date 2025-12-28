@@ -4,12 +4,13 @@ from app.extensions import db, ma
 from app.resources.movie import movie_bp
 from app.resources.user import user_bp
 from app.resources.usertag import usertag_bp
-
+from flask_cors import CORS
 
 def create_app():
     # Create app obj and config
     app = Flask(__name__)
     app.config.from_object(DevelopmentConfig)
+    CORS(app)
 
     # Init extensions
     db.init_app(app)

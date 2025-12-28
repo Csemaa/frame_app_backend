@@ -13,7 +13,7 @@ class Movie(db.Model):
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key= True)
-    email = db.Column(db.String(128))
+    email = db.Column(db.String(128), nullable=True)
     nickname = db.Column(db.String(32))
     profile_picture = db.Column(db.String(64))
 
