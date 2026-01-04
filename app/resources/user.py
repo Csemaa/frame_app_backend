@@ -33,7 +33,6 @@ def add_user():
     data = request.json
     if data is None:
         return jsonify({'error': 'No JSON data provided!'})
-    
     user = user_schema.load(data)
     db.session.add(user)
     db.session.commit()

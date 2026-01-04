@@ -1,10 +1,11 @@
 from flask import Flask
 from config import DevelopmentConfig
-from app.extensions import db, ma
+from app.extensions import db, ma, migrate
 from app.resources.movie import movie_bp
 from app.resources.user import user_bp
 from app.resources.usertag import usertag_bp
 from flask_cors import CORS
+
 
 def create_app():
     # Create app obj and config
@@ -14,6 +15,7 @@ def create_app():
 
     # Init extensions
     db.init_app(app)
+    migrate.init_app(app, db)
     ma.init_app(app)
 
     app.register_blueprint(movie_bp, url_prefix='/api/movies')

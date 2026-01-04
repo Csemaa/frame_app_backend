@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 from app.models import Movie
 from app.schemas import movie_schema, movies_schema
 from app.extensions import db
-
+from flask import send_file
 
 movie_bp = Blueprint('movies', import_name=__name__)
 
@@ -67,3 +67,16 @@ def delete_movie(id: int):
     db.session.commit()
     return jsonify({'message': 'Movie deleted successfully!'}), 200
 
+
+@movie_bp.route('/<int:id>/stream', methods=['GET'])
+def stream_movie(id: int):
+    '''
+    Streams a movie file by movie ID
+    '''
+    movie = Movie.query.get_or_404(id)
+
+    return send_file(
+        movie.path,
+        mimetype="video/mp4",
+        as_attachment=False
+    )
