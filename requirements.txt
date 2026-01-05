@@ -1,0 +1,7 @@
+flask
+dotenv
+flask-cors
+flask-sqlalchemy
+flask-marshmallow
+flask-migrate
+marshmallow
