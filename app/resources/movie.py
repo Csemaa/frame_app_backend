@@ -77,6 +77,6 @@ def stream_movie(id: int):
 
     return send_file(
         movie.path,
-        mimetype="video/mp4",
+        mimetype=movie.mimetype or 'video/mp4',
         as_attachment=False
     )
