@@ -1,7 +1,6 @@
 flask
-dotenv
+python-dotenv
 flask-cors
 flask-sqlalchemy
 flask-marshmallow
 flask-migrate
-marshmallow
